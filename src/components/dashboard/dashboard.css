@@ -1,5 +1,138 @@
-#dashboard {
-  display: flex;
-  width: 1080px;
-  justify-content: space-between;
+.dashboard {
+  display: grid;
+  grid-template-columns: 220px 1fr 300px;
+  width: 100%;
+  min-height: calc(100vh - 64px); /* navbar height */
+}
+
+/* LEFT */
+.left {
+  padding: 24px;
+  border-right: 1px solid #21262d;
+}
+
+.left h4 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.new-btn {
+  background: #238636;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* FIX: target actual input */
+.left input {
+  width: 100%;
+  background: #010409;
+  border: 1px solid #21262d;
+  color: #e6edf3;
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.repo {
+  color: #58a6ff;
+  cursor: pointer;
+  font-size: 14px;
+  border: 0.5px solid grey;
+  border-radius: 10px;
+  width: 180px;
+  height: 40px;
+  padding: 10px 10px;
+}
+
+
+/* MIDDLE */
+.middle {
+  padding: 32px 48px;
+}
+
+.middle h1 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.search {
+  width: 100%;
+  background: #010409;
+  border: 1px solid #21262d;
+  color: #e6edf3;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.repo-card {
+  background: #010409;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 720px;
+}
+
+.repo-card h3 {
+  color: #58a6ff;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+.repo-card p {
+  color: #8b949e;
+  font-size: 14px;
+}
+
+.repo-card span {
+  background: #21262d;
+  color: #8b949e;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  margin-left: 8px;
+}
+
+/* RIGHT */
+.right {
+  padding: 32px 24px;
+}
+
+.update-card {
+  background: #010409;
+  border: 1px solid #21262d;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.update-card h4 {
+  margin-bottom: 12px;
+}
+
+.blue {
+  color: #58a6ff;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.muted {
+  color: #8b949e;
+  margin-top: 12px;
+}
+/* 🔥 FIX CHROME AUTOFILL WHITE INPUT ISSUE */
+.left input:-webkit-autofill,
+.left input:-webkit-autofill:hover,
+.left input:-webkit-autofill:focus,
+.left input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #010409 inset !important;
+  -webkit-text-fill-color: #e6edf3 !important;
+  border: 1px solid #21262d;
 }

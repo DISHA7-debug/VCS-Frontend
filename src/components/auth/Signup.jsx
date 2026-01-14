@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../authContext";
 import "./auth.css";
-import logo from "../../assets/github-mark-white.svg";
+import logo from "../../assets/brand-logo.svg";
 import { Link } from "react-router-dom";
 
 const Signup = () => {

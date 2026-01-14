@@ -1,56 +1,48 @@
 import React, { useEffect } from "react";
-import {useNavigate, useRoutes} from 'react-router-dom'
+import { useNavigate, useRoutes } from "react-router-dom";
 
-// Pages List
+// Pages
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/user/Profile";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/Signup";
+import CreateRepo from "./components/repo/CreateRepo";
+import RepoDetails from "./components/repo/RepoDetails"; // ✅ repo/:id page
+import Issue from "./components/issue/Issue";
 
-// Auth Context
 import { useAuth } from "./authContext";
 
-const ProjectRoutes = ()=>{
-    const {currentUser, setCurrentUser} = useAuth();
-    const navigate = useNavigate();
+const ProjectRoutes = () => {
+  const { currentUser, setCurrentUser } = useAuth();
+  const navigate = useNavigate();
 
-    useEffect(()=>{
-        const userIdFromStorage = localStorage.getItem("userId");
+  useEffect(() => {
+    const userIdFromStorage = localStorage.getItem("userId");
 
-        if(userIdFromStorage && !currentUser){
-            setCurrentUser(userIdFromStorage);
-        }
+    if (userIdFromStorage && !currentUser) {
+      setCurrentUser(userIdFromStorage);
+    }
 
-        if(!userIdFromStorage && !["/auth", "/signup"].includes(window.location.pathname))
-        {
-            navigate("/auth");
-        }
+    if (!userIdFromStorage && !["/auth", "/signup"].includes(window.location.pathname)) {
+      navigate("/auth");
+    }
 
-        if(userIdFromStorage && window.location.pathname=='/auth'){
-            navigate("/");
-        }
-    }, [currentUser, navigate, setCurrentUser]);
+    if (userIdFromStorage && window.location.pathname === "/auth") {
+      navigate("/");
+    }
+  }, [currentUser, navigate, setCurrentUser]);
 
-    let element = useRoutes([
-        {
-            path:"/",
-            element:<Dashboard/>
-        },
-        {
-            path:"/auth",
-            element:<Login/>
-        },
-        {
-            path:"/signup",
-            element:<Signup/>
-        },
-        {
-            path:"/profile",
-            element:<Profile/>
-        }
-    ]);
+  let element = useRoutes([
+    { path: "/", element: <Dashboard /> },
+    { path: "/auth", element: <Login /> },
+    { path: "/signup", element: <Signup /> },
+    { path: "/profile", element: <Profile /> },  
+    { path: "/create", element: <CreateRepo /> },
+    { path: "/repo/:id", element: <RepoDetails /> },
+    { path: "/issues", element: <Issue /> },
+  ]);
 
-    return element;
-}
+  return element;
+};
 
 export default ProjectRoutes;

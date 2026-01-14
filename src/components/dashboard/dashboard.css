@@ -1,8 +1,8 @@
 .dashboard {
   display: grid;
-  grid-template-columns: 220px 1fr 300px;
+  grid-template-columns: 240px 1fr 340px;
   width: 100%;
-  min-height: calc(100vh - 64px); /* navbar height */
+  min-height: calc(100vh - 64px);
 }
 
 /* LEFT */
@@ -11,32 +11,46 @@
   border-right: 1px solid #21262d;
 }
 
-.left h4 {
+/* ✅ top row: heading + button same line */
+.left-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 12px;
+  
+}
+
+.left h4 {
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
 }
 
 .new-btn {
-  background: #238636;
+  background: var(--accent);
   color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 6px;
-  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-weight: 700;
   cursor: pointer;
-  font-size: 13px;
 }
 
-/* FIX: target actual input */
+.new-btn:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+
 .left input {
   width: 100%;
   background: #010409;
   border: 1px solid #21262d;
   color: #e6edf3;
-  padding: 6px 8px;
-  border-radius: 6px;
-  margin-bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 14px;
   font-size: 13px;
 }
 
@@ -44,21 +58,33 @@
   color: #58a6ff;
   cursor: pointer;
   font-size: 14px;
-  border: 0.5px solid grey;
-  border-radius: 10px;
-  width: 180px;
-  height: 40px;
-  padding: 10px 10px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+  
 }
-
+.repo-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.repo:hover {
+  background: rgba(88, 166, 255, 0.08);
+}
+.empty-repo {
+  color: #8b949e;
+  font-size: 13px;
+  margin-top: 12px;
+}
 
 /* MIDDLE */
 .middle {
-  padding: 32px 48px;
+  padding: 28px 40px;
 }
 
 .middle h1 {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 16px;
 }
 
@@ -67,8 +93,8 @@
   background: #010409;
   border: 1px solid #21262d;
   color: #e6edf3;
-  padding: 8px 10px;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border-radius: 10px;
   margin-bottom: 24px;
   font-size: 14px;
 }
@@ -76,63 +102,64 @@
 .repo-card {
   background: #010409;
   border: 1px solid #21262d;
-  border-radius: 12px;
-  padding: 16px;
-  max-width: 720px;
+  border-radius: 14px;
+  padding: 18px;
+  max-width: 760px;
 }
 
 .repo-card h3 {
   color: #58a6ff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .repo-card p {
   color: #8b949e;
   font-size: 14px;
+  margin: 0;
 }
 
 .repo-card span {
   background: #21262d;
   color: #8b949e;
   font-size: 12px;
-  padding: 2px 6px;
+  padding: 2px 8px;
   border-radius: 999px;
-  margin-left: 8px;
 }
 
 /* RIGHT */
 .right {
-  padding: 32px 24px;
+  padding: 28px 24px;
 }
 
 .update-card {
   background: #010409;
   border: 1px solid #21262d;
-  border-radius: 18px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 22px;
+  min-height: 260px;
 }
 
 .update-card h4 {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .blue {
   color: #58a6ff;
   font-weight: 500;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .muted {
   color: #8b949e;
-  margin-top: 12px;
+  margin-top: 14px;
 }
-/* 🔥 FIX CHROME AUTOFILL WHITE INPUT ISSUE */
-.left input:-webkit-autofill,
-.left input:-webkit-autofill:hover,
-.left input:-webkit-autofill:focus,
-.left input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px #010409 inset !important;
-  -webkit-text-fill-color: #e6edf3 !important;
-  border: 1px solid #21262d;
+
+
+.active-repo {
+  font-weight: 600;
+  color: #58a6ff;
 }

@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./profile.css";
 import Navbar from "../Navbar";
-import { UnderlineNav } from "@primer/react";
-import { BookIcon, RepoIcon } from "@primer/octicons-react";
 import HeatMapProfile from "./HeatMap";
 import { useAuth } from "../../authContext";
 
@@ -13,6 +11,7 @@ const API_URL = "http://localhost:3002";
 const Profile = () => {
   const navigate = useNavigate();
   const { setCurrentUser } = useAuth();
+
   const [userDetails, setUserDetails] = useState({
     username: "",
   });
@@ -28,14 +27,11 @@ const Profile = () => {
       }
 
       try {
-        const response = await axios.get(
-          `${API_URL}/userProfile/${userId}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
+        const response = await axios.get(`${API_URL}/userProfile/${userId}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
         setUserDetails(response.data);
       } catch (err) {
@@ -57,67 +53,32 @@ const Profile = () => {
     <>
       <Navbar />
 
-      <UnderlineNav aria-label="Profile navigation">
-        <UnderlineNav.Item
-          aria-current="page"
-          icon={BookIcon}
-          sx={{
-            backgroundColor: "transparent",
-            color: "white",
-            "&:hover": {
-              textDecoration: "underline",
-              color: "white",
-            },
-          }}
-        >
-          Overview
-        </UnderlineNav.Item>
-
-        <UnderlineNav.Item
-          onClick={() => navigate("/repo")}
-          icon={RepoIcon}
-          sx={{
-            backgroundColor: "transparent",
-            color: "whitesmoke",
-            "&:hover": {
-              textDecoration: "underline",
-              color: "white",
-            },
-          }}
-        >
-          Starred Repositories
-        </UnderlineNav.Item>
-      </UnderlineNav>
-
-      <button
-        onClick={handleLogout}
-        id="logout"
-        style={{
-          position: "fixed",
-          bottom: "50px",
-          right: "50px",
-        }}
-      >
+      <button onClick={handleLogout} className="logout-btn">
         Logout
       </button>
 
       <div className="profile-page-wrapper">
+        {/* LEFT */}
         <div className="user-profile-section">
           <div className="profile-image" />
 
-          <div className="name">
-            <h3>{userDetails.username || "User"}</h3>
-          </div>
+          <h3 className="username">{userDetails.username || "User"}</h3>
 
           <button className="follow-btn">Follow</button>
 
           <div className="follower">
-            <p>10 Followers</p>
-            <p>3 Following</p>
+            <p>
+              <b>10</b> Followers
+            </p>
+            <p>
+              <b>3</b> Following
+            </p>
           </div>
         </div>
 
+        {/* RIGHT */}
         <div className="heat-map-section">
+          <h3 className="heatmap-title">Recent Contributions</h3>
           <HeatMapProfile />
         </div>
       </div>

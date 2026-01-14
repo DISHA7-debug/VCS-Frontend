@@ -1,7 +1,16 @@
+:root {
+  --accent: #2ea043; /* ✅ your brand green */
+  --accent-soft: rgba(46, 160, 67, 0.12);
+  --border: #21262d;
+  --bg: rgba(13, 17, 23, 0.92);
+  --text: #e6edf3;
+  --muted: #8b949e;
+}
+
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 9999;
 
   height: 64px;
   width: 100%;
@@ -10,41 +19,59 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 24px;
-  background-color: #0d1117;
-  border-bottom: 1px solid #21262d;
+  padding: 0 28px;
+  background: var(--bg);
+  backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid var(--border);
 }
 
-/* LEFT */
+/* LEFT BRAND */
 .nav-left {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
 }
 
 .brand {
   font-size: 18px;
-  font-weight: 600;
-  color: #e6edf3;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: 0.3px;
 }
 
-/* RIGHT */
+.tagline {
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 6px;
+  border-left: 1px solid var(--border);
+  padding-left: 10px;
+}
+
+/* RIGHT LINKS */
 .nav-right {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 14px;
 }
 
 .nav-right a {
-  color: #e6edf3;
-  font-weight: 500;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: 0.2s ease;
 }
 
 .nav-right a:hover {
-  color: #58a6ff;
+  background: #161b22;
+  color: var(--accent);
 }

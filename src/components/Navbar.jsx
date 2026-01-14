@@ -1,21 +1,19 @@
 import { Link } from "react-router-dom";
 import "./navbar.css";
-import githubLogo from "../assets/github-mark-white.svg"; // ✅ CORRECT PATH
+import brandLogo from "../assets/brand-logo.svg"; // ✅ YOUR LOGO
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="nav-left">
-        <img
-          src={githubLogo}
-          alt="GitHub"
-          className="logo"
-        />
-        <span className="brand">GitHub</span>
-      </div>
+      <Link to="/" className="nav-left">
+        <img src={brandLogo} alt="RepoSphere" className="logo"  style={{ width: 50, height: 60 }} />
+        <span className="brand">RepoSphere</span>
+        
+      </Link>
 
       <div className="nav-right">
-        <Link to="/create">Create a Repository</Link>
+        <Link to="/create">New Repo</Link>
+        <Link to="/issues">Issues</Link>
         <Link to="/profile">Profile</Link>
       </div>
     </nav>

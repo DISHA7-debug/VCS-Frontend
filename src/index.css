@@ -9,11 +9,19 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;
-  width:100%;
   background-color: #0d1117;
+}
+
+/* ROOT should take full screen */
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* links */

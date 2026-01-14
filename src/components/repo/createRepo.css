@@ -1,0 +1,149 @@
+.repo-page {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  background: #0d1117;
+}
+
+.repo-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.repo-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.repo-subtitle {
+  color: #8b949e;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.repo-form {
+  background: #010409;
+  border: 1px solid #21262d;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.repo-section {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #21262d;
+}
+
+.repo-section:last-child {
+  border-bottom: none;
+}
+
+.repo-section-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.repo-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.repo-grow {
+  flex: 1;
+}
+
+.repo-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #e6edf3;
+}
+
+.repo-field input {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  color: #e6edf3;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.repo-field input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.repo-owner-box {
+  width: 100%;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  color: #8b949e;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.repo-visibility label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.visibility-options {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vis-option {
+  display: flex;
+  gap: 12px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.vis-option input {
+  margin-top: 6px;
+}
+
+.vis-title {
+  font-weight: 700;
+  margin: 0;
+  font-size: 14px;
+}
+
+.vis-desc {
+  margin: 4px 0 0;
+  color: #8b949e;
+  font-size: 13px;
+}
+
+.create-btn {
+  width: 200px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #238636;
+  border: none;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-btn:hover {
+  filter: brightness(1.05);
+}
+
+.create-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

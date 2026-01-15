@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Navbar from "../Navbar";
 import "./issue.css";
 
-const BASE_URL = "http://localhost:5000"; // ✅ change if needed
+const BASE_URL = "http://13.239.96.166:3002"; // ✅ change if needed
 
 const Issue = () => {
   const currentUserId = localStorage.getItem("userId");

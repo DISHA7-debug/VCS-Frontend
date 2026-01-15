@@ -36,7 +36,7 @@ const CreateRepo = () => {
                 owner: userID,
             };
 
-            const res = await fetch("http://localhost:3002/repo/create", {
+            const res = await fetch("http://13.239.96.166:3002/repo/create", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

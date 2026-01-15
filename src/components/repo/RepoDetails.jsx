@@ -10,7 +10,7 @@ const RepoDetails = () => {
   useEffect(() => {
     const fetchRepo = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/repo/${id}`);
+        const res = await fetch(`http://13.239.96.166:3002/repo/${id}`);
         const data = await res.json();
         setRepo(data);
       } catch (err) {

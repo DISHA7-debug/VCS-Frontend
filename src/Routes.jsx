@@ -4,8 +4,8 @@ import { useNavigate, useRoutes } from "react-router-dom";
 // Pages
 import Dashboard from "./components/dashboard/Dashboard";
 import Profile from "./components/user/Profile";
-import Login from "./components/auth/login";
-import Signup from "./components/auth/signup";
+import Login from "./components/auth/Login";
+import Signup from "./components/auth/Signup";
 import CreateRepo from "./components/repo/CreateRepo";
 import RepoDetails from "./components/repo/RepoDetails"; // ✅ repo/:id page
 import Issue from "./components/issue/Issue";

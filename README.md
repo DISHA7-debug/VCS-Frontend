@@ -96,7 +96,6 @@ RepoSphere is ideal for demonstrating **full stack development workflow** with r
 
 ## ⚙️ Installation + Setup + Run (Local Development)
 
-✅ Copy-paste full steps below:
 
 ```bash
 # Clone the repository
@@ -151,7 +150,13 @@ src/
 │── main.jsx                  # Entry point
 │── App.jsx                   # App wrapper (if present)
 
-👩‍💻 Author
 
-Disha Chopra
-GitHub: https://github.com/DISHA7-debug
+---
+
+## 👩‍💻 Author
+
+**Disha Chopra**  
+📌 Frontend Developer | React Developer  
+🔗 GitHub: https://github.com/DISHA7-debug  
+
+---

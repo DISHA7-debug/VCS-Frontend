@@ -6,7 +6,7 @@ import Navbar from "../Navbar";
 import HeatMapProfile from "./HeatMap";
 import { useAuth } from "../../authContext";
 
-const API_URL = "http://13.239.96.166:3002";
+const API_URL = "https://vcs-backend-yvkn.onrender.com";
 
 const Profile = () => {
   const navigate = useNavigate();

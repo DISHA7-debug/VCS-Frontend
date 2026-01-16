@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./dashboard.css";
 
-const API_URL = "http://13.239.96.166:3002";
+const API_URL = "https://vcs-backend-yvkn.onrender.com";
 
 const Dashboard = () => {
   const navigate = useNavigate();

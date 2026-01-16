@@ -17,7 +17,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("http://13.239.96.166:3002/signup", {
+      const res = await axios.post("https://vcs-backend-yvkn.onrender.com/signup", {
         email,
         password,
         username,

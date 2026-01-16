@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useAuth } from "../../authContext";
 import "./auth.css";
-
 import logo from "../../assets/brand-logo.svg";
 import { Link } from "react-router-dom";
+import { API_URL } from "../../config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -18,7 +18,8 @@ const Login = () => {
 
     try {
       setLoading(true);
-      const res = await axios.post("https://vcs-backend-yvkn.onrender.com/login", {
+
+      const res = await axios.post(`${API_URL}/login`, {
         email,
         password,
       });
@@ -43,7 +44,6 @@ const Login = () => {
       </div>
 
       <div className="login-box-wrapper">
-        
         <h2 className="login-heading">Sign In</h2>
 
         <form className="login-box" onSubmit={handleLogin}>
@@ -69,18 +69,14 @@ const Login = () => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="login-btn"
-            disabled={loading}
-          >
+          <button type="submit" className="login-btn" disabled={loading}>
             {loading ? "Loading..." : "Login"}
           </button>
         </form>
 
         <div className="pass-box">
           <p>
-            New to GitHub? <Link to="/signup">Create an account</Link>
+            New here? <Link to="/signup">Create an account</Link>
           </p>
         </div>
       </div>

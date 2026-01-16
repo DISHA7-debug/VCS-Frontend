@@ -36,7 +36,7 @@ const CreateRepo = () => {
                 owner: userID,
             };
 
-            const res = await fetch("https://vcs-backend-yvkn.onrender.com/repo/create", {
+            const res = await fetch("https://vcs-backend-ynkn.onrender.com/repo/create", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

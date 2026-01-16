@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../Navbar";
 import "./dashboard.css";
+import { API_URL } from "../../config";
 
-const API_URL = "https://vcs-backend-yvkn.onrender.com";
+
+
 
 const Dashboard = () => {
   const navigate = useNavigate();

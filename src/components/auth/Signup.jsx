@@ -4,6 +4,7 @@ import { useAuth } from "../../authContext";
 import "./auth.css";
 import logo from "../../assets/brand-logo.svg";
 import { Link } from "react-router-dom";
+import { API_URL } from "../../config";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -17,7 +18,8 @@ const Signup = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("https://vcs-backend-yvkn.onrender.com/signup", {
+
+      const res = await axios.post(`${API_URL}/signup`, {
         email,
         password,
         username,
@@ -84,6 +86,7 @@ const Signup = () => {
         <div className="pass-box">
           <p>
             Already have an account? <Link to="/auth">Login</Link>
+
           </p>
         </div>
       </div>

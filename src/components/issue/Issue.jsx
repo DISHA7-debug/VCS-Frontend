@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import Navbar from "../Navbar";
 import "./issue.css";
 
-const BASE_URL = "https://vcs-backend-yvkn.onrender.com"; // ✅ change if needed
+import { API_URL } from "../../config";
+
 
 const Issue = () => {
   const currentUserId = localStorage.getItem("userId");
@@ -26,11 +27,11 @@ const Issue = () => {
       try {
         setLoading(true);
 
-        const repoRes = await fetch(`${BASE_URL}/repo/all`);
+        const repoRes = await fetch(`${API_URL}/repo/all`);
         const repoData = await repoRes.json();
         setRepos(repoData || []);
 
-        const issueRes = await fetch(`${BASE_URL}/issue/all`);
+        const issueRes = await fetch(`${API_URL}/issue/all`);
         const issueData = await issueRes.json();
         setIssues(issueData || []);
       } catch (err) {
@@ -121,7 +122,7 @@ const Issue = () => {
         assignee: currentUserId,
       };
 
-      const res = await fetch(`${BASE_URL}/issue/create`, {
+      const res = await fetch(`${API_URL}/issue/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

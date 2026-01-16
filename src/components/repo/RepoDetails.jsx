@@ -10,7 +10,7 @@ const RepoDetails = () => {
   useEffect(() => {
     const fetchRepo = async () => {
       try {
-        const res = await fetch(`https://vcs-backend-yvkn.onrender.com/repo/${id}`);
+        const res = await fetch(`https://vcs-backend-ynkn.onrender.com/repo/${id}`);
         const data = await res.json();
         setRepo(data);
       } catch (err) {
